@@ -18,7 +18,7 @@ Check out [wyga-site-trafik](https://github.com/rjsocha/wyga-site-traefik) for g
 
 ### Deployment
 
-To deploy, clone this repository to your local machine and execute the following command:
+To deploy, clone this repository to your local machine by executing the following commands:
 
   ```bash
   git clone https://github.com/rjsocha/wyga-site.git
