@@ -21,6 +21,8 @@ Check out [wyga-site-trafik](https://github.com/rjsocha/wyga-site-traefik) for g
 To deploy, clone this repository to your local machine and execute the following command:
 traefik.wyga.site
   ```bash
+  git clone https://github.com/rjsocha/wyga-site.git
+  cd wyga-site
   docker compose up -d --pull always
   ```
 
