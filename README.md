@@ -52,7 +52,7 @@ docker compose ls | grep wyga-site
    *.wyga.site
   ```
 
-### Exposing Services
+### Exposing Services (docker compose)
 
   Define **expose.vhost** label and add **wyga-site** network reference:
 
@@ -75,4 +75,16 @@ docker compose ls | grep wyga-site
   networks:
     wyga-site:
       external: true
+  ```
+
+### From CLI
+
+  Examples:
+
+  ```
+  docker run --label expose.vhost=apache.wyga.site --network wyga-site --rm --name apache httpd:alpine
+  ```
+
+  ```
+  docker run --label expose.vhost=pma.wyga.site --network wyga-site --rm --name phpmyadmin phpmyadmin
   ```
