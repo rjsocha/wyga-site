@@ -2,9 +2,17 @@
 version: "3"
 name: "example"
 
+x-logging:
+  &default-logging
+  options:
+    max-file: "10"
+    max-size: "25M"
+    compress: "true"
+
 services:
   nginx:
     image: nginx:stable-alpine
+    logging: *default-logging
     labels:
       - expose.vhost=example.wyga.site
     networks:
