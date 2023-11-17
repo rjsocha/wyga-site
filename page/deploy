@@ -1,5 +1,0 @@
-#!/bin/sh
-set -eu
-mkdir -p ~/.wyga-site && cd ~/.wyga-site
-curl -sO https://raw.githubusercontent.com/rjsocha/wyga-site/main/compose.yaml 
-docker compose up -d --pull always
