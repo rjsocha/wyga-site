@@ -54,7 +54,7 @@ docker compose ls | grep wyga-site
 
 ### Exposing Services (docker compose)
 
-  Define **expose.vhost** label and add **wyga-site** network reference:
+  Define **wyga.expose** label and add **wyga-site** network reference:
 
   ```
   ---
@@ -65,7 +65,7 @@ docker compose ls | grep wyga-site
     nginx:
       image: nginx:stable-alpine
       labels:
-        - expose.vhost=example.wyga.site
+        - wyga.expose=example.wyga.site
       networks:
         wyga-site:
           priority: 100
@@ -77,14 +77,20 @@ docker compose ls | grep wyga-site
       external: true
   ```
 
+  You can publish a service with multiple names (separate them with commas). If the hostname ends with an '*', the wildcard name will be published in the format 'name-*.wyga.site'. For example:
+
+```
+  - wyga.expose=example*.wyga.site
+```
+
 ### From CLI
 
   Examples:
 
   ```
-  docker run --label expose.vhost=apache.wyga.site --network wyga-site --rm --name apache httpd:alpine
+  docker run --label wyga.expose=apache.wyga.site --network wyga-site --rm --name apache httpd:alpine
   ```
 
   ```
-  docker run --label expose.vhost=pma.wyga.site --network wyga-site --rm --name phpmyadmin phpmyadmin
+  docker run --label wyga.expose=pma.wyga.site --network wyga-site --rm --name phpmyadmin phpmyadmin
   ```

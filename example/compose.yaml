@@ -14,7 +14,10 @@ services:
     image: nginx:stable-alpine
     logging: *default-logging
     labels:
-      - expose.vhost=example.wyga.site
+      # https://example.wyga.site
+      # https://wilcard.wyga.site
+      # https://wilcard-*.wyga.site
+      - wyga.expose=example.wyga.site,wildcard*.wyga.site
     networks:
       wyga-site:
         priority: 100
