@@ -48,7 +48,6 @@ docker compose ls | grep wyga-site
   This service offers the following TLS certificates:
 
   ```
-   wyga.site
    *.wyga.site
   ```
 
@@ -77,7 +76,7 @@ docker compose ls | grep wyga-site
       external: true
   ```
 
-  You can publish a service with multiple names (separate them with commas). If the hostname ends with an '*', the wildcard name will be published in the format 'name-*.wyga.site'. For example:
+  You can publish a service with multiple names (separate them with commas). If the hostname ends with an '\*', the wildcard name will be published in the format 'name-\*.wyga.site'. For example:
 
 ```
   - wyga.expose=example*.wyga.site
