@@ -21,7 +21,7 @@ services:
   nginx:
     image: nginx:stable-alpine
     labels:
-      - expose.vhost=example.wyga.site
+      - wyga.expose=example.wyga.site
     networks:
       wyga-site:
         priority: 100
