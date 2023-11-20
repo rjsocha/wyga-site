@@ -17,7 +17,7 @@ services:
     networks:
       - wyga-site
     ports:
-      - ${GATEWAY_HTTPS_PORT:-443}:443
+      - ${WYGA_SITE_HTTPS_PORT:-443}:443
     environment:
       WYGA_SITE_DASHBOARD: "${WYGA_SITE_DASHBOARD:-traefik.wyga.site}"
       WYGA_SITE_LOGLEVEL: "${WYGA_SITE_LOGLEVEL:-error}"
