@@ -1,9 +1,11 @@
 version: "3"
+
 services:
   nginx:
     image: wyga/unginx
     labels:
-      - wyga.expose=example
+      - wyga.expose=example.wyga.site
+
 networks:
   default:
     name: wyga-site

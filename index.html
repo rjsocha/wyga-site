@@ -21,7 +21,7 @@ services:
   nginx:
     image: wyga/unginx
     labels:
-      - wyga.expose=example
+      - wyga.expose=example.wyga.site
 
 networks:
   default:
@@ -34,7 +34,7 @@ networks:
 mkdir -p example && cd $_ && curl -sfO https://wyga.site/compose.yml && docker compose up -d<button class="copy-btn-inline" onclick="copyToClipboard(this)">copy</button>
 </pre>
 
-<span class="filler bottom"></span> <footer class="row"> <a href="https://github.com/rjsocha/wyga-site">GitHub Project</a> &nbsp;&nbsp; <a href="https://traefik.wyga.site">Traefik Dashboard</a> <span class="filler"></span> <a href="https://hub.docker.com/r/wyga/wyga-site">Docker Hub</a> </footer>
+<span class="filler bottom"></span> <footer class="row"> <a href="https://github.com/rjsocha/wyga-site">GitHub Project</a> &nbsp;&nbsp; <a href="https://traefik.wyga.site">Traefik Dashboard</a> &nbsp;&nbsp; <a href="https://example.wyga.site">https://example.wyga.site</a> <span class="filler"></span> <a href="https://hub.docker.com/r/wyga/wyga-site">Docker Hub</a> </footer>
 <script>
   function copyToClipboard(button) {
     var codeBlock = button.parentElement;
