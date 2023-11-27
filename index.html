@@ -14,24 +14,22 @@
 Install <pre>curl -sf https://wyga.site/deploy | sh</pre>
 Use
 <pre>
----
 version: "3"
-name: "example"
 
 services:
   nginx:
-    image: nginx:stable-alpine
+    image: wyga/unginx
     labels:
-      - wyga.expose=example.wyga.site
-    networks:
-      wyga-site:
-        priority: 100
-      default:
-        priority: 500
+      - wyga.expose=example
 
 networks:
-  wyga-site:
+  default:
+    name: wyga-site
     external: true
+</pre>
+
+<pre>
+mkdir -p example && cd $_ && curl -sf -o compose.yml https://wyga.site/example.yml && docker compose up -d
 </pre>
 
 <span class="filler bottom"></span> <footer class="row"> <a href="https://github.com/rjsocha/wyga-site">GitHub Project</a> <span class="filler"></span> <a href="https://hub.docker.com/r/wyga/wyga-site">Docker Hub</a> </footer>

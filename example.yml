@@ -1,0 +1,10 @@
+version: "3"
+services:
+  nginx:
+    image: wyga/unginx
+    labels:
+      - wyga.expose=example
+networks:
+  default:
+    name: wyga-site
+    external: true
