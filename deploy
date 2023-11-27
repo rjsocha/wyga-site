@@ -2,5 +2,5 @@
 set -eu
 docker network inspect wyga-site >/dev/null 2>/dev/null || docker network create wyga-site
 mkdir -p ~/.wyga-site && cd ~/.wyga-site
-curl -sO https://raw.githubusercontent.com/rjsocha/wyga-site/main/compose.yaml 
+curl -sfO https://raw.githubusercontent.com/rjsocha/wyga-site/main/compose.yaml 
 docker compose up -d --pull always
