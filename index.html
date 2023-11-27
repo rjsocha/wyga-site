@@ -12,7 +12,7 @@
 <span class="filler top"></span>   
 <div class="logo" title="wyga.site"></div>
 <h2>Simplify Docker Service Deployment with TLS Certificates for Local Developer Environments</h2>
-Install <pre>curl -sf https://wyga.site/deploy | sh</pre>
+Install <pre>curl -sf https://wyga.site/deploy | sh<button class="copy-btn-inline" onclick="copyToClipboard(this)">copy</button></pre>
 Use
 <pre>
 version: "3"
@@ -27,12 +27,27 @@ networks:
   default:
     name: wyga-site
     external: true
+<button class="copy-btn" onclick="copyToClipboard(this)">copy</button>
 </pre>
 
 <pre>
-mkdir -p example && cd $_ && curl -sf -o compose.yml https://wyga.site/example.yml && docker compose up -d
+mkdir -p example && cd $_ && curl -sfO https://wyga.site/compose.yml && docker compose up -d<button class="copy-btn-inline" onclick="copyToClipboard(this)">copy</button>
 </pre>
 
 <span class="filler bottom"></span> <footer class="row"> <a href="https://github.com/rjsocha/wyga-site">GitHub Project</a> &nbsp;&nbsp; <a href="https://traefik.wyga.site">Traefik Dashboard</a> <span class="filler"></span> <a href="https://hub.docker.com/r/wyga/wyga-site">Docker Hub</a> </footer>
+<script>
+  function copyToClipboard(button) {
+    var codeBlock = button.parentElement;
+    var textToCopy = codeBlock.textContent.trim();
+    var buttonLabel = button.innerText.trim();
+    textToCopy = textToCopy.replace(buttonLabel, '');
+    var textArea = document.createElement("textarea");
+    textArea.value = textToCopy;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+}
+</script>
 </body>
 </html>

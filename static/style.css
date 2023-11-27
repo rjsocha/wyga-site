@@ -1,4 +1,27 @@
+.copy-btn {
+  cursor: pointer;
+  background-color: #007bff;
+  font-weight: bold;
+  color: #fff;
+  padding: 8px 8px;
+  border-radius: 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.copy-btn-inline {
+  cursor: pointer;
+  background-color: #007bff;
+  font-weight: bold;
+  color: #fff;
+  padding: 8px 8px;
+  border-radius: 10px;
+  position: relative;
+  bottom: 0px;
+  right: -10px;
+}
 pre {
+      position: relative;
       background-color: #f4f4f4;
       border: 1px solid #ddd;
       padding: 25px;
