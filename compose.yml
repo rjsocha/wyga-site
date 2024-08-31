@@ -1,12 +1,12 @@
-version: "3"
+name: wyga-example
 
 services:
   nginx:
     image: wyga/unginx
     labels:
-      - wyga.expose=example.wyga.site
+      - vhost.expose=example.wyga.site
 
 networks:
   default:
-    name: wyga-site
+    name: gateway
     external: true
