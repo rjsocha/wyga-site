@@ -13,7 +13,7 @@ Check out [wyga-site-trafik](https://github.com/rjsocha/wyga-site-traefik) for g
 ### Setup
 
   ```
-  docker network inspect wyga-site || docker network create wyga-site
+  docker network inspect gateway || docker network create gateway
   ```
 
 ### Deployment
@@ -53,7 +53,7 @@ docker compose ls | grep wyga-site
 
 ### Exposing Services (docker compose)
 
-  Define **wyga.expose** label and add **wyga-site** network reference:
+  Define **wyga.expose** label and add **gateway** network reference:
 
   ```
   ---
@@ -66,13 +66,13 @@ docker compose ls | grep wyga-site
       labels:
         - wyga.expose=example.wyga.site
       networks:
-        wyga-site:
+        gateway:
           priority: 100
         default:
           priority: 500
 
   networks:
-    wyga-site:
+    gateway:
       external: true
   ```
 
@@ -87,9 +87,9 @@ docker compose ls | grep wyga-site
   Examples:
 
   ```
-  docker run --label wyga.expose=apache.wyga.site --network wyga-site --rm --name apache httpd:alpine
+  docker run --label wyga.expose=apache.wyga.site --network gateway --rm --name apache httpd:alpine
   ```
 
   ```
-  docker run --label wyga.expose=pma.wyga.site --network wyga-site --rm --name phpmyadmin phpmyadmin
+  docker run --label wyga.expose=pma.wyga.site --network gateway --rm --name phpmyadmin phpmyadmin
   ```

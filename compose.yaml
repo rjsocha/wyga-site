@@ -15,9 +15,10 @@ services:
     security_opt:
       - no-new-privileges:true
     networks:
-      - wyga-site
+      - gateway
     ports:
       - ${WYGA_SITE_HTTPS_PORT:-443}:443
+      - ${WYGA_SITE_HTTP_PORT:-80}:80
     environment:
       WYGA_SITE_DASHBOARD: "${WYGA_SITE_DASHBOARD:-traefik.wyga.site}"
       WYGA_SITE_LOGLEVEL: "${WYGA_SITE_LOGLEVEL:-error}"
@@ -26,5 +27,5 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
 
 networks:
-  wyga-site:
+  gateway:
     external: true

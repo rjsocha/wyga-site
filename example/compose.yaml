@@ -19,11 +19,11 @@ services:
       # https://wilcard-*.wyga.site
       - wyga.expose=example.wyga.site,wildcard*.wyga.site
     networks:
-      wyga-site:
+      gateway:
         priority: 100
       default:
         priority: 500
 
 networks:
-  wyga-site:
+  gateway:
     external: true
