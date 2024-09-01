@@ -22,7 +22,7 @@ To deploy, clone this repository to your local machine by executing the followin
 
   ```bash
   mkdir -p ~/.wyga-site && cd ~/.wyga-site
-  curl -sO https://raw.githubusercontent.com/rjsocha/wyga-site/main/compose.yaml
+  curl -sO https://raw.githubusercontent.com/rjsocha/wyga-site/master/compose.yaml
   docker compose up -d --pull always
   ```
 
