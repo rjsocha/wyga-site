@@ -14,17 +14,31 @@ services:
     security_opt:
       - no-new-privileges:true
     networks:
-      - gateway
+      default:
+        priority: 100
+      expose:
+        priority: 500
     ports:
       - ${WYGA_SITE_HTTP_PORT:-80}:80
       - ${WYGA_SITE_HTTPS_PORT:-443}:443
     environment:
-      WYGA_SITE_DASHBOARD: "${WYGA_SITE_DASHBOARD:-traefik.wyga.site}"
+      WYGA_SITE_DASHBOARD: "${WYGA_SITE_DASHBOARD:-dashboard.wyga.site}"
       WYGA_SITE_LOGLEVEL: "${WYGA_SITE_LOGLEVEL:-error}"
       WYGA_SITE_ACCESSLOG: "${WYGA_SITE_ACCESSLOG:-true}"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
 
 networks:
-  gateway:
+  default:
+    name: gateway
     external: true
+  expose:
+    name: gateway-expose
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: gateway-ex
+    ipam:
+      driver: default
+      config:
+        - subnet: 100.100.100.96/29
+          gateway: 100.100.100.100
