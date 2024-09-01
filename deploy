@@ -2,5 +2,5 @@
 set -eu
 docker network inspect gateway >/dev/null 2>/dev/null || docker network create gateway
 mkdir -p ~/.wyga-site && cd ~/.wyga-site
-curl -sfO https://raw.githubusercontent.com/rjsocha/wyga-site/main/compose.yaml
+curl -sfO https://raw.githubusercontent.com/rjsocha/wyga-site/master/compose.yaml
 docker compose up -d --pull always
